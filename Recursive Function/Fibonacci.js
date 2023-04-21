@@ -20,7 +20,6 @@ let a = 0;
 let b = 1;
 let fibonnaciArray = [];
 function fibonnaciRecursive(number) {
-
   if (number === 0) return fibonnaciArray;
   a = b + a;
   b = a - b;
@@ -30,4 +29,17 @@ function fibonnaciRecursive(number) {
 }
 
 fibonnaciRecursive(15);
-console.log(fibonnaciArray);
+// console.log(fibonnaciArray);
+
+/**
+ * 위 변수없이 피보나치 수열 출력하기
+ */
+function fib(number) {
+  if (number === 0 || number === 1) return 1;
+  else if ( number < 0 ) return "Fibonacci calculation for Negative numbers is not supported";
+  return (fib(number - 1) + fib(number - 2));
+}
+
+for(let i = 0; i < 10; i++) {
+  console.log(fib(i));
+}
